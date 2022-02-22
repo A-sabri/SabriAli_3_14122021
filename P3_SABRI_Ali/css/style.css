@@ -1,0 +1,22 @@
+/* ------------------------ Générale ---------------------------- */
+
+*{
+    box-sizing: border-box;
+}                
+
+body{
+    margin: auto ;
+    padding: 0; 
+    width: 375px;                
+    
+}
+
+.logo, h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+}
+
+p{
+    font-family: 'Shrikhand', 'cursive';
+}
+ 
+    
