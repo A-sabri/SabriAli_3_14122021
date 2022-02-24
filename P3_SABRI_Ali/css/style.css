@@ -1,22 +1,33 @@
+@charset "UTF-8";
 /* ------------------------ Générale ---------------------------- */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
 
-*{
-    box-sizing: border-box;
-}                
-
-body{
-    margin: auto ;
-    padding: 0; 
-    width: 375px;                
-    
+body {
+  margin: auto;
+  padding: 0;
+  width: 375px;
 }
 
 .logo, h1, h2, h3 {
-    font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
-p{
-    font-family: 'Shrikhand', 'cursive';
+p {
+  font-family: 'Shrikhand', 'cursive';
 }
- 
-    
+
+.color-P {
+  color: #9356DC;
+}
+
+.color-S {
+  color: #FF79DA;
+}
+
+.color-T {
+  color: #99E2D0;
+}
+/*# sourceMappingURL=style.css.map */
