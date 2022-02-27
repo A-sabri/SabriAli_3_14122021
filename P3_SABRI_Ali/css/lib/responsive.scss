@@ -1,0 +1,7 @@
+$medium: 768px;
+$large: 1224px;
+$xlarge: 1824px;
+
+$large-up: "only screen and (min-device-width : #{$medium} ) and (orientation : portrait)";
+$medium-up: "only screen and (min-width : #{$large} )";
+$xlarge-up: "only screen and (min-width : #{$xlarge} )";
