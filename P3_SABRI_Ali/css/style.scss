@@ -20,13 +20,30 @@ $withe: #fff;
 
 $shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   
-.logo, h1, h2, h3 {
-    font-family: 'Roboto', sans-serif;
-}
-  
-p {
+.logo{
     font-family: 'Shrikhand', 'cursive';
 }
+
+h1, h2, h3, p  {
+    font-family: 'Roboto', sans-serif;
+}
+h1{
+    font-size: 30px;
+}
+
+h2{
+    font-size: 18px;
+}
+
+h3{
+    font-size: 16px;
+}
+ 
+p{
+    font-size: 14px;
+}
+
+
 
 a{
     text-decoration: none;
@@ -67,10 +84,12 @@ body {
 %btn{
     margin: 20px;
     border-radius: 25px;
+    color: white;
     background-color: $primary;
 }
 
 .diner-search{
+    padding: 10%;
     background-color: $lightGrey;
 
     .title {
@@ -81,9 +100,7 @@ body {
         display: flex;
 
         .search-btn {
-            margin: 20px;
-            border-radius: 25px;
-            background-color: $primary;
+            @extend %btn;
             width: 220px;
             height: 50px;
         }
@@ -109,7 +126,7 @@ body {
         i {
             align-self: center;
         }
-        h3 {
+        h2 {
             align-self: center;
         }
     }
@@ -122,6 +139,8 @@ section {
     flex-direction: column;
     align-items: center;
     background-color: $lightGrey;
+    justify-content: center;
+    padding: 3%;
 }
 
 .card {
@@ -162,22 +181,40 @@ section {
 footer {
     padding: 3%;
     background-color: $darkGrey;
+    div{
+        padding: 10px 0;
 
-    a, i{
-        color: $withe;
-    }
-    img {
-        width: 100px;
+        a, i{
+            color: $withe;
+        }
+        img {
+            width: 8em;
+        }
     }
 }
 
-/* menu A la francaise */ 
+/* ------------------------------ menu ------------------------------------ */ 
+
+.restaurant-1{
+    background-image: url("/Users/ali/Documents/GitHub/SabriAli_3_14122021/P3_SABRI_Ali/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+}
+
+.restaurant-2{
+    background-image: url("/Users/ali/Documents/GitHub/SabriAli_3_14122021/P3_SABRI_Ali/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+}
+
+.restaurant-3{
+    background-image: url("/Users/ali/Documents/GitHub/SabriAli_3_14122021/P3_SABRI_Ali/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+}
+
+.restaurant-4{
+    background-image: url("/Users/ali/Documents/GitHub/SabriAli_3_14122021/P3_SABRI_Ali/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+}
 
 .Restaurant{
     .image-restaurant {
         width: 100%;
         height: 260px;
-        background-image: url("/Users/ali/Documents/GitHub/SabriAli_3_14122021/P3_SABRI_Ali/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
         background-size: cover;
     }
     .name-restaurant {
@@ -199,6 +236,13 @@ footer {
     }
 }
 
+section{
+    h3{
+        align-self: flex-start;
+        padding: 20px 0;
+    }
+}
+
 %card{
     width: 100%;
     background-color: $withe;
@@ -207,7 +251,7 @@ footer {
     box-shadow: $shadow;
     width: 350px;
     /*height: 70px;*/
-    padding: 3%;
+    padding: 2%;
     display: flex;
     justify-content: space-between;
 }
@@ -245,6 +289,7 @@ footer {
     display: flex;
     justify-content: center;
     background-color: $lightGrey;
+    padding-bottom: 80px;
 
     .order-btn {
         width: 186px;
