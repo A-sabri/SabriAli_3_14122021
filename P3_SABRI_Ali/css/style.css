@@ -3,6 +3,36 @@
   box-sizing: border-box;
 }
 
+.card .like, .Restaurant .name-restaurant .like {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.card .like i, .Restaurant .name-restaurant .like i {
+  font-size: 25px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.card .like .fa-solid, .Restaurant .name-restaurant .like .fa-solid {
+  color: transparent;
+  background: linear-gradient(163deg, #ff79da 24%, #9356dc 77%);
+  -webkit-background-clip: text;
+  visibility: hidden;
+  position: absolute;
+}
+
+.card .like:hover .fa-solid, .Restaurant .name-restaurant .like:hover .fa-solid {
+  visibility: visible;
+}
+
+.card .like:hover .fa-regular, .Restaurant .name-restaurant .like:hover .fa-regular {
+  visibility: hidden;
+}
+
 .logo {
   font-family: 'Shrikhand', 'cursive';
 }
@@ -140,6 +170,10 @@ body {
   position: relative;
 }
 
+.menu a .menu-card:hover {
+  background: #e4d5f6;
+}
+
 .menu a .menu-card i {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
@@ -165,10 +199,6 @@ body {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-}
-
-.menu:hover {
-  background: #9356dc;
 }
 
 section {
@@ -225,19 +255,6 @@ section {
   padding: 0 3%;
 }
 
-.card .like {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.card .like i {
-  font-size: 25px;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-}
-
 footer {
   padding: 3%;
   background-color: #353535;
@@ -291,19 +308,6 @@ footer div img {
   border-radius: 3em 3em 0 0;
   background-color: #f6f6f6;
   margin-top: -65px;
-}
-
-.Restaurant .name-restaurant .like {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.Restaurant .name-restaurant .like i {
-  font-size: 25px;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
 }
 
 section h3 {

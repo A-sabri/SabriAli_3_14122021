@@ -22,6 +22,40 @@ $darkGrey: #353535;
 $withe: #fff;
 
 $shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+%like{
+    display: flex;
+    position: relative;
+    
+    i{
+        font-size: 25px;
+        align-self: center;
+        
+        
+    }
+    
+    .fa-solid{
+        color: transparent;
+        background: $gradient;
+        -webkit-background-clip: text;
+        visibility: hidden;
+        position: absolute;
+        
+    }
+    
+    &:hover{
+        
+        .fa-solid{
+            visibility: visible;
+        
+            
+        }
+        .fa-regular{
+            visibility: hidden;
+            
+        }
+    }    
+}
   
 .logo{
     font-family: 'Shrikhand', 'cursive';
@@ -45,8 +79,6 @@ h3{
 p{
     font-size: 14px;
 }
-
-
 
 a{
     text-decoration: none;
@@ -133,6 +165,9 @@ body {
             width: 320px;
             height: 70px;
             position: relative;
+            &:hover{
+                background: lighten($primary, 30%);
+            }
             
             i {
                 align-self: center;
@@ -141,6 +176,7 @@ body {
                 align-self: center;
             }
         }
+
         .number {
             border-radius: 50%;
             width: 26px;
@@ -155,9 +191,7 @@ body {
             
         }
     }
-    &:hover{
-        background: lighten($color: ($primary), $amount: 0);
-    }
+    
 }
 
 
@@ -196,15 +230,8 @@ section {
         padding: 0 3%;
     }
     .like{
-        display: flex;
-
-        i{
-            font-size: 25px;
-            align-self: center;
-            
-            
-        }
-    }
+        @extend %like;
+    }    
 }    
 
 footer {
@@ -254,14 +281,9 @@ footer {
         border-radius: 3em 3em 0 0;
         background-color: $lightGrey;
         margin-top: -65px;
-
+        
         .like{
-            display: flex;
-    
-            i{
-                font-size: 25px;
-                align-self: center;
-            }
+            @extend %like;
         }
     }
 }
@@ -328,4 +350,3 @@ section{
         @extend %btn;
     }
 }
-
