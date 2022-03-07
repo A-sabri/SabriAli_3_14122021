@@ -22,41 +22,77 @@ $darkGrey: #353535;
 $withe: #fff;
 
 $shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+$large-shadow: rgba(0, 0, 0, 0.35) 5px 10px 20px;
 
-%like{
+%like {
+
     display: flex;
     position: relative;
+    
     
     i{
         font-size: 25px;
         align-self: center;
-        
-        
     }
     
     .fa-solid{
         color: transparent;
         background: $gradient;
         -webkit-background-clip: text;
-        visibility: hidden;
         position: absolute;
+        animation: heart 1.5s forwards;   
+    }
+
+    @keyframes heart {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+
+}
+
+%check{
+    width: 80px;
+    border-radius: 0 15px 15px 0;
+    background: $tertiary;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    overflow: hidden;
+    animation: greenbox 1.5s;
+    transform-origin: right;
+   
+    
+
+    @keyframes greenbox {
+        
+        0% {transform: scale(0); }
+        100% {transform: scale(1); }
         
     }
     
-    &:hover{
-        
-        .fa-solid{
-            visibility: visible;
-        
-            
-        }
-        .fa-regular{
-            visibility: hidden;
-            
-        }
-    }    
+    i{
+        color: $withe;
+        font-size: 2em;
+        transition: transform 1.5s ;  
+    }
+
+     
 }
-  
+
+%btn {
+    margin: 20px;
+    border-radius: 25px;
+    color: white;
+    background: $gradient;
+    box-shadow: $shadow;
+    border: none;
+    cursor: pointer;
+    &:hover{
+        background: $secondary;
+        box-shadow: $large-shadow;
+    }
+} 
+
 .logo{
     font-family: 'Shrikhand', 'cursive';
 }
@@ -113,30 +149,21 @@ body {
     
     .icon-location {
         align-self: center;
+        padding: 0 10px;
     }
-}
-
-%btn{
-    margin: 20px;
-    border-radius: 25px;
-    color: white;
-    background: $gradient;
-    border: none;
-    cursor: pointer;
-
 }
 
 .diner-search{
     padding: 10%;
     background-color: $lightGrey;
-
+    
     .title {
         text-align: center;
     }
     nav {
         justify-content: center;
         display: flex;
-
+        
         .search-btn {
             @extend %btn;
             width: 220px;
@@ -165,6 +192,7 @@ body {
             width: 320px;
             height: 70px;
             position: relative;
+            
             &:hover{
                 background: lighten($primary, 30%);
             }
@@ -208,13 +236,14 @@ section {
 .card {
    
     border-radius: 15px;
-    margin: 10px 0;
+    margin: 20px 0;
     box-shadow: $shadow;
     width: 335px;
     height: 252px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    transition: transform 330ms ease-in-out;
 
     .image-card {
         overflow: hidden;
@@ -231,7 +260,11 @@ section {
     }
     .like{
         @extend %like;
-    }    
+    }
+    
+    &:hover{
+        transform: scale(1.05);
+    }
 }    
 
 footer {
@@ -291,50 +324,51 @@ footer {
 section{
     h3{
         align-self: flex-start;
-        padding: 20px 0;
+        
     }
 }
 
-%card{
-    width: 100%;
-    background-color: $withe;
-    border-radius: 15px;
-    margin: 10px 0;
-    box-shadow: $shadow;
+.card-menu{
     width: 350px;
-    /*height: 70px;*/
-    padding: 2%;
     display: flex;
     justify-content: space-between;
-}
-
-%price{
-    display: flex;
-    align-self: center;
-}
-
-.starter-card {
-    @extend %card;
-
-    .starter-price{
-        @extend %price;
+    margin: 10px 0;
+    background-color: $withe;
+    border-radius: 15px;
+    box-shadow: $shadow;
+    
+    .name-menu {
+       
+        padding: 2%;
+        width: 100%;
+        
     }
-}
 
-.dish-card{
-    @extend %card;
-
-    .dish-price{
-        @extend %price;
+    .price{
+        display: flex;
+        align-self: center;
+        padding: 2%;
+       
     }
-}
 
-.dessert-card{
-    @extend %card;
-
-    .dessert-price{
-        @extend %price;
+    .check{
+        visibility: hidden;
     }
+    
+    
+    &:hover{
+        
+       .check{
+        @extend %check;
+        visibility: visible;
+        
+        
+        }
+
+        i{
+            transform: rotate(2turn);
+        }
+    } 
 }
 
 .order{

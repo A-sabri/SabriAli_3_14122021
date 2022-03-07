@@ -21,16 +21,95 @@
   color: transparent;
   background: linear-gradient(163deg, #ff79da 24%, #9356dc 77%);
   -webkit-background-clip: text;
-  visibility: hidden;
   position: absolute;
+  -webkit-animation: heart 1.5s forwards;
+          animation: heart 1.5s forwards;
 }
 
-.card .like:hover .fa-solid, .Restaurant .name-restaurant .like:hover .fa-solid {
-  visibility: visible;
+@-webkit-keyframes heart {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.card .like:hover .fa-regular, .Restaurant .name-restaurant .like:hover .fa-regular {
-  visibility: hidden;
+@keyframes heart {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.card-menu:hover .check {
+  width: 80px;
+  border-radius: 0 15px 15px 0;
+  background: #99E2D0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  -webkit-animation: greenbox 1.5s;
+          animation: greenbox 1.5s;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+}
+
+@-webkit-keyframes greenbox {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes greenbox {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.card-menu:hover .check i {
+  color: #fff;
+  font-size: 2em;
+  -webkit-transition: -webkit-transform 1.5s;
+  transition: -webkit-transform 1.5s;
+  transition: transform 1.5s;
+  transition: transform 1.5s, -webkit-transform 1.5s;
+}
+
+.diner-search nav .search-btn, .order .order-btn {
+  margin: 20px;
+  border-radius: 25px;
+  color: white;
+  background: linear-gradient(163deg, #ff79da 24%, #9356dc 77%);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.diner-search nav .search-btn:hover, .order .order-btn:hover {
+  background: #FF79DA;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 5px 10px 20px;
+          box-shadow: rgba(0, 0, 0, 0.35) 5px 10px 20px;
 }
 
 .logo {
@@ -100,15 +179,7 @@ body {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-}
-
-.diner-search nav .search-btn, .order .order-btn {
-  margin: 20px;
-  border-radius: 25px;
-  color: white;
-  background: linear-gradient(163deg, #ff79da 24%, #9356dc 77%);
-  border: none;
-  cursor: pointer;
+  padding: 0 10px;
 }
 
 .diner-search {
@@ -221,7 +292,7 @@ section {
 
 .card {
   border-radius: 15px;
-  margin: 10px 0;
+  margin: 20px 0;
   -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
           box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   width: 335px;
@@ -234,6 +305,10 @@ section {
       -ms-flex-direction: column;
           flex-direction: column;
   overflow: hidden;
+  -webkit-transition: -webkit-transform 330ms ease-in-out;
+  transition: -webkit-transform 330ms ease-in-out;
+  transition: transform 330ms ease-in-out;
+  transition: transform 330ms ease-in-out, -webkit-transform 330ms ease-in-out;
 }
 
 .card .image-card {
@@ -253,6 +328,11 @@ section {
           justify-content: space-between;
   background-color: #fff;
   padding: 0 3%;
+}
+
+.card:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 footer {
@@ -313,33 +393,48 @@ footer div img {
 section h3 {
   -ms-flex-item-align: start;
       align-self: flex-start;
-  padding: 20px 0;
 }
 
-.starter-card, .dish-card, .dessert-card {
-  width: 100%;
-  background-color: #fff;
-  border-radius: 15px;
-  margin: 10px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+.card-menu {
   width: 350px;
-  /*height: 70px;*/
-  padding: 2%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin: 10px 0;
+  background-color: #fff;
+  border-radius: 15px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.starter-card .starter-price, .dish-card .dish-price, .dessert-card .dessert-price {
+.card-menu .name-menu {
+  padding: 2%;
+  width: 100%;
+}
+
+.card-menu .price {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-item-align: center;
       align-self: center;
+  padding: 2%;
+}
+
+.card-menu .check {
+  visibility: hidden;
+}
+
+.card-menu:hover .check {
+  visibility: visible;
+}
+
+.card-menu:hover i {
+  -webkit-transform: rotate(2turn);
+          transform: rotate(2turn);
 }
 
 .order {
