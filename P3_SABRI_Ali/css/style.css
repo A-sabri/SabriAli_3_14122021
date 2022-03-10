@@ -433,26 +433,6 @@ section h3 {
           transform: rotate(2turn);
 }
 
-.Restaurant {
-  -webkit-animation: slide-page 1.5s forwards;
-          animation: slide-page 1.5s forwards;
-}
-
-.starter {
-  -webkit-animation: slide-page 1.5s 0.2s forwards;
-          animation: slide-page 1.5s 0.2s forwards;
-}
-
-.dish {
-  -webkit-animation: slide-page 1.5s 0.4s forwards;
-          animation: slide-page 1.5s 0.4s forwards;
-}
-
-.dessert {
-  -webkit-animation: slide-page 1.5s 0.6s forwards;
-          animation: slide-page 1.5s 0.6s forwards;
-}
-
 .order {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -462,8 +442,6 @@ section h3 {
           justify-content: center;
   background-color: #f6f6f6;
   padding-bottom: 80px;
-  -webkit-animation: slide-page 1.5s 0.8s forwards;
-          animation: slide-page 1.5s 0.8s forwards;
 }
 
 .order .order-btn {
@@ -472,44 +450,54 @@ section h3 {
   font-size: 18px;
 }
 
-footer {
-  -webkit-animation: slide-page 1.5s 1s forwards;
-          animation: slide-page 1.5s 1s forwards;
+.starter a:nth-child(1), .dish a:nth-child(1), .dessert a:nth-child(1) {
+  -webkit-animation: slide-page 1s .1s ease-out;
+          animation: slide-page 1s .1s ease-out;
+}
+
+.starter a:nth-child(2), .dish a:nth-child(2), .dessert a:nth-child(2) {
+  -webkit-animation: slide-page 1s .2s  ease-out;
+          animation: slide-page 1s .2s  ease-out;
+}
+
+.starter a:nth-child(3), .dish a:nth-child(3), .dessert a:nth-child(3) {
+  -webkit-animation: slide-page 1s .3s ease-out;
+          animation: slide-page 1s .3s ease-out;
+}
+
+.starter a:nth-child(4), .dish a:nth-child(4), .dessert a:nth-child(4) {
+  -webkit-animation: slide-page 1s .4s ease-out;
+          animation: slide-page 1s .4s ease-out;
+}
+
+.starter a:nth-child(5), .dish a:nth-child(5), .dessert a:nth-child(5) {
+  -webkit-animation: slide-page 1s .4s ease-out;
+          animation: slide-page 1s .4s ease-out;
 }
 
 @-webkit-keyframes slide-page {
   0% {
-    -webkit-transform: translateY(4000px);
-            transform: translateY(4000px);
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
     opacity: 0;
-  }
-  50% {
-    -webkit-transform: translateY(2000px);
-            transform: translateY(2000px);
-    opacity: 0.5;
   }
   100% {
     -webkit-transform: translateY(0);
             transform: translateY(0);
-    opacity: 1;
+    opacity: 0.7;
   }
 }
 
 @keyframes slide-page {
   0% {
-    -webkit-transform: translateY(4000px);
-            transform: translateY(4000px);
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
     opacity: 0;
-  }
-  50% {
-    -webkit-transform: translateY(2000px);
-            transform: translateY(2000px);
-    opacity: 0.5;
   }
   100% {
     -webkit-transform: translateY(0);
             transform: translateY(0);
-    opacity: 1;
+    opacity: 0.7;
   }
 }
 /*# sourceMappingURL=style.css.map */
