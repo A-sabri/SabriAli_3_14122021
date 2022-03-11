@@ -1,7 +1,7 @@
-$medium: 768px;
-$large: 1224px;
-$xlarge: 1824px;
+$tablet: 768px;
+$desktop: 1090px;
+$tv: 1824px;
 
-$large-up: "only screen and (min-device-width : #{$medium} ) and (orientation : portrait)";
-$medium-up: "only screen and (min-width : #{$large} )";
-$xlarge-up: "only screen and (min-width : #{$xlarge} )";
+$tablet-up: "only screen and (min-device-width : #{$tablet} ) and (orientation : portrait)";
+$desktop-up: "only screen and (min-width : #{$desktop} )";
+$tv-up: "only screen and (min-width : #{$tv} )";

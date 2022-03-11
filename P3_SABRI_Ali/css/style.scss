@@ -13,7 +13,9 @@ $primary: #9356DC;
 $secondary:#FF79DA;
 $tertiary: #99E2D0;
 
-$gradient: linear-gradient(163deg, rgba(255,121,218,1) 24%, rgba(147,86,220,1) 77%);
+$gradient:  linear-gradient(163deg, rgba(255,121,218,1) 24%, rgba(147,86,220,1) 77%);
+$gradient2: linear-gradient(163deg, rgba(255,121,218,1) 54%, rgba(147,86,220,1) );
+
 
 
 $grey: #eaeaea;
@@ -41,7 +43,7 @@ $large-shadow: rgba(0, 0, 0, 0.35) 5px 10px 20px;
         color: transparent;
         opacity: 0;
         &:active{
-            animation: heart .1s forwards;
+            animation: heart .1ms forwards infinite;
         }  
     }
     @keyframes heart {
@@ -63,7 +65,7 @@ $large-shadow: rgba(0, 0, 0, 0.35) 5px 10px 20px;
     border: none;
     cursor: pointer;
     &:hover{
-        background: $secondary;
+        background: $gradient2;
         box-shadow: $large-shadow;
     }
 } 
@@ -103,7 +105,28 @@ li{
 body {
     margin: auto;
     padding: 0;
-    width: 375px;
+    width: 100%;
+}
+
+
+header{
+    display: flex;
+    flex-direction: column;
+
+    @media #{$tablet-up} {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 20px ;
+    }
+
+    @media #{$desktop-up} {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 0 ;
+        margin: 0 100px;
+    }
+
+
 }
 
  
@@ -124,11 +147,39 @@ body {
     
     .icon-location {
         align-self: center;
-        padding: 0 10px;
+        padding: 10px;
+    }
+
+    @media #{$tablet-up} {
+        padding: 0 25px;
+        border-radius: 10px;
+    }
+
+    @media #{$desktop-up} {
+        padding: 0 25px;
+        border-radius: 10px;
+    }
+}
+
+main{
+    @media #{$tablet-up} {
+        padding: 0 20px;
+    }
+}
+
+.bloc-content{
+    @media #{$desktop-up} {
+        display: flex;
+        flex-direction: row-reverse;;
+        justify-content: space-between;
+        margin: 0 100px;
+        padding: 3%;
+        align-items: center;
     }
 }
 
 .diner-search{
+    width: 100%;
     padding: 10%;
     background-color: $lightGrey;
     
@@ -146,13 +197,27 @@ body {
 
         }
     }
+
+    @media #{$tablet-up} {
+        border-radius: 15px;
+    }
+
+    @media #{$desktop-up}{
+        background-color: white;
+        border-radius: 15px;
+    }
     
 }
+
     
 .menu {
     align-items: center;
     display: flex;
     flex-direction: column;
+
+    h2{
+        width: 100%;
+    }
 
     a{
         display: flex;
@@ -167,6 +232,11 @@ body {
             width: 320px;
             height: 70px;
             position: relative;
+
+            @media #{$tablet-up} {
+                padding: 0 35px;
+            }
+    
             
             &:hover{
                 background: lighten($primary, 30%);
@@ -177,6 +247,9 @@ body {
             }
             h2 {
                 align-self: center;
+                @media #{$tablet-up} {
+                    padding: 0 15px;
+                }
             }
         }
 
@@ -194,7 +267,17 @@ body {
             
         }
     }
-    
+    @media #{$tablet-up} {
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        
+    }
+
+    @media #{$desktop-up} {
+        flex-direction: column;
+        
+    }
 }
 
 
@@ -206,12 +289,34 @@ section {
     background-color: $lightGrey;
     justify-content: center;
     padding: 3%;
+
+    h2{
+        width: 100%;
+    }
+
+    @media #{$tablet-up} {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        border-radius: 15px;
+    }
+
+    @media #{$desktop-up} {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        border-radius: 15px;
+        margin: 100px;
+    }
+
+
+
 }
 
 .card {
    
     border-radius: 15px;
-    margin: 20px 0;
+    margin: 20px 10px;
     box-shadow: $shadow;
     width: 335px;
     height: 252px;
@@ -220,11 +325,42 @@ section {
     overflow: hidden;
     transition: transform 330ms ease-in-out;
 
+    @media #{$tablet-up} {
+        width: 400px;
+        
+    }
+
+    @media #{$desktop-up} {
+        width: 540px;
+        height: 300px;
+    }
+
+    @media #{$tv-up} {
+        width: 700px;
+        height: 500px;
+    }
+
     .image-card {
         overflow: hidden;
+        position: relative;
 
         img {
             width: 100%;
+        }
+
+        span{
+
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 75px;
+            height: 25px;
+            margin: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $tertiary;
+            
         }
     }
     .title-card {
@@ -327,6 +463,7 @@ section{
     .price{
         display: flex;
         align-self: center;
+        font-weight: bold;
         padding: 2%;
         
     }
@@ -387,26 +524,40 @@ section{
     }
 }
 
+.card:nth-child(1){
+    animation: slide-page 1s ease-out;
+}
+.card:nth-child(2){
+    animation: slide-page 1s ease-out;
+}
+.card:nth-child(3){
+    animation: slide-page 1s .1s ease-out;
+}
+.card:nth-child(4){
+    animation: slide-page 1s .2s ease-out;
+}
+.card:nth-child(5){
+    animation: slide-page 1s .3s ease-out;
+}
 
 
 .starter a:nth-child(1), .dish a:nth-child(1), .dessert a:nth-child(1){
-    animation: slide-page 1s .1s ease-out;
+    animation: slide-page 1s ease-out;
 }
 .starter a:nth-child(2), .dish a:nth-child(2), .dessert a:nth-child(2){
-    animation: slide-page 1s .2s  ease-out;
+    animation: slide-page 1s .1s  ease-out;
 }
 .starter a:nth-child(3), .dish a:nth-child(3), .dessert a:nth-child(3){
-    animation: slide-page 1s .3s ease-out;
+    animation: slide-page 1s .2s ease-out;
 }
 .starter a:nth-child(4), .dish a:nth-child(4), .dessert a:nth-child(4){
-    animation: slide-page 1s .4s ease-out;
+    animation: slide-page 1s .3s ease-out;
 }
 .starter a:nth-child(5), .dish a:nth-child(5), .dessert a:nth-child(5){
     animation: slide-page 1s .4s ease-out;
 }
 
 @keyframes slide-page {
-    0%   {transform: translateY(100%); opacity:(0);}
+    0%   {transform: translateY(300%); opacity:(0);}
     100% {transform: translateY(0); opacity:(0.7);}
-
 }
