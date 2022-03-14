@@ -1,3 +1,172 @@
+.loader {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background: ghostwhite;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+  opacity: 0.9;
+  -webkit-animation: vanish 1.5s .5s forwards;
+          animation: vanish 1.5s .5s forwards;
+}
+
+@-webkit-keyframes vanish {
+  0% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+@keyframes vanish {
+  0% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+.loader-circle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 370px;
+  height: 370px;
+  border-radius: 370px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  background: #f6f6f6;
+}
+
+.loader-circle h1 {
+  font-family: 'Shrikhand', 'cursive';
+  font-size: 22px;
+  color: #9356DC;
+  text-shadow: rgba(0, 0, 0, 0.35) 5px 10px 20px;
+  margin: 20px;
+}
+
+.loader-circle::after {
+  content: '';
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border: 10px solid transparent;
+  border-radius: 100%;
+  -webkit-animation: spin 5s linear infinite;
+          animation: spin 5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    border-bottom: 10px solid #9356DC;
+    border-top: 10px solid #FF79DA;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    border-bottom: 10px solid #FF79DA;
+    border-top: 10px solid #9356DC;
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    border-bottom: 10px solid #9356DC;
+    border-top: 10px solid #FF79DA;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    border-bottom: 10px solid #FF79DA;
+    border-top: 10px solid #9356DC;
+  }
+}
+
+.loader-dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.loader-dots span {
+  width: 10px;
+  height: 10px;
+  margin: 15px;
+  border-radius: 100%;
+  background-color: #FF79DA;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 5px 10px 20px;
+          box-shadow: rgba(0, 0, 0, 0.35) 5px 10px 20px;
+  display: inline-block;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-transform: scale(0.2);
+          transform: scale(0.2);
+  -webkit-animation: grow 2.5s .5s ease-in-out infinite;
+          animation: grow 2.5s .5s ease-in-out infinite;
+}
+
+@-webkit-keyframes grow {
+  0%, 100% {
+    -webkit-transform: scale(0.2);
+            transform: scale(0.2);
+    background-color: #FF79DA;
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    background-color: #9356DC;
+  }
+}
+
+@keyframes grow {
+  0%, 100% {
+    -webkit-transform: scale(0.2);
+            transform: scale(0.2);
+    background-color: #FF79DA;
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    background-color: #9356DC;
+  }
+}
+
+.loader-dots span:nth-child(1) {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+
+.loader-dots span:nth-child(2) {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+
+.loader-dots span:nth-child(3) {
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -26,9 +195,17 @@
   opacity: 0;
 }
 
-.card .like .fa-solid:active, .Restaurant .name-restaurant .like .fa-solid:active {
-  -webkit-animation: heart .1ms forwards infinite;
-          animation: heart .1ms forwards infinite;
+.card .like .fa-solid:hover, .Restaurant .name-restaurant .like .fa-solid:hover {
+  -webkit-animation: heart .5s forwards;
+          animation: heart .5s forwards;
+}
+
+.card .like .fa-solid:hover:not(:active)::after, .Restaurant .name-restaurant .like .fa-solid:hover:not(:active)::after {
+  content: '';
+  -webkit-animation: heart .5s forwards;
+          animation: heart .5s forwards;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
 }
 
 @-webkit-keyframes heart {
@@ -115,7 +292,7 @@ header {
           flex-direction: column;
 }
 
-@media only screen and (min-device-width: 768px) and (orientation: portrait) {
+@media only screen and (min-width: 768px), only screen and (min-width: 1090px), only screen and (min-width: 1824px) {
   header {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -128,17 +305,9 @@ header {
   }
 }
 
-@media only screen and (min-width: 1090px) {
+@media only screen and (min-width: 1090px), only screen and (min-width: 1824px) {
   header {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
     padding: 10px 0;
-    margin: 0 100px;
   }
 }
 
@@ -154,6 +323,13 @@ header {
 .logo img {
   width: 165px;
   height: 30px;
+}
+
+@media only screen and (min-width: 768px), only screen and (min-width: 1090px), only screen and (min-width: 1824px) {
+  .logo img {
+    width: 250px;
+    height: 38px;
+  }
 }
 
 .location {
@@ -173,27 +349,32 @@ header {
   padding: 10px;
 }
 
-@media only screen and (min-device-width: 768px) and (orientation: portrait) {
+@media only screen and (min-width: 768px), only screen and (min-width: 1090px), only screen and (min-width: 1824px) {
   .location {
     padding: 0 25px;
     border-radius: 10px;
   }
 }
 
-@media only screen and (min-width: 1090px) {
-  .location {
-    padding: 0 25px;
-    border-radius: 10px;
+@media only screen and (min-width: 768px), only screen and (min-width: 1090px), only screen and (min-width: 1824px) {
+  header, main {
+    margin: 0 20px;
   }
 }
 
-@media only screen and (min-device-width: 768px) and (orientation: portrait) {
-  main {
-    padding: 0 20px;
+@media only screen and (min-width: 1090px), only screen and (min-width: 1824px) {
+  header, main {
+    margin: 0 100px;
   }
 }
 
-@media only screen and (min-width: 1090px) {
+@media only screen and (min-width: 1824px) {
+  header, main {
+    margin: 0 200px;
+  }
+}
+
+@media only screen and (min-width: 1090px), only screen and (min-width: 1824px) {
   .bloc-content {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -205,7 +386,6 @@ header {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    margin: 0 100px;
     padding: 3%;
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -237,16 +417,23 @@ header {
   height: 50px;
 }
 
-@media only screen and (min-device-width: 768px) and (orientation: portrait) {
+@media only screen and (min-width: 1090px), only screen and (min-width: 1824px) {
+  .diner-search nav .search-btn {
+    width: 300px;
+    height: 70px;
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 768px), only screen and (min-width: 1090px), only screen and (min-width: 1824px) {
   .diner-search {
     border-radius: 15px;
   }
 }
 
-@media only screen and (min-width: 1090px) {
+@media only screen and (min-width: 1090px), only screen and (min-width: 1824px) {
   .diner-search {
     background-color: white;
-    border-radius: 15px;
   }
 }
 
@@ -261,6 +448,7 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding: 3%;
 }
 
 .menu h2 {
@@ -288,12 +476,11 @@ header {
   width: 320px;
   height: 70px;
   position: relative;
+  padding: 0 30px;
 }
 
-@media only screen and (min-device-width: 768px) and (orientation: portrait) {
-  .menu a .menu-card {
-    padding: 0 35px;
-  }
+.menu a .menu-card i {
+  margin-right: 20px;
 }
 
 .menu a .menu-card:hover {
@@ -312,12 +499,6 @@ header {
       align-self: center;
 }
 
-@media only screen and (min-device-width: 768px) and (orientation: portrait) {
-  .menu a .menu-card h2 {
-    padding: 0 15px;
-  }
-}
-
 .menu a .number {
   border-radius: 50%;
   width: 26px;
@@ -333,7 +514,7 @@ header {
       align-self: center;
 }
 
-@media only screen and (min-device-width: 768px) and (orientation: portrait) {
+@media only screen and (min-width: 768px), only screen and (min-width: 1090px), only screen and (min-width: 1824px) {
   .menu {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -346,7 +527,7 @@ header {
   }
 }
 
-@media only screen and (min-width: 1090px) {
+@media only screen and (min-width: 1090px), only screen and (min-width: 1824px) {
   .menu {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -355,7 +536,7 @@ header {
   }
 }
 
-section {
+.home-section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -373,12 +554,12 @@ section {
   padding: 3%;
 }
 
-section h2 {
+.home-section h2 {
   width: 100%;
 }
 
-@media only screen and (min-device-width: 768px) and (orientation: portrait) {
-  section {
+@media only screen and (min-width: 768px), only screen and (min-width: 1090px), only screen and (min-width: 1824px) {
+  .home-section {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -388,21 +569,6 @@ section h2 {
     -ms-flex-pack: distribute;
         justify-content: space-around;
     border-radius: 15px;
-  }
-}
-
-@media only screen and (min-width: 1090px) {
-  section {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    border-radius: 15px;
-    margin: 100px;
   }
 }
 
@@ -411,7 +577,7 @@ section h2 {
   margin: 20px 10px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
           box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  width: 335px;
+  width: 90%;
   height: 252px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -427,23 +593,23 @@ section h2 {
   transition: transform 330ms ease-in-out, -webkit-transform 330ms ease-in-out;
 }
 
-@media only screen and (min-device-width: 768px) and (orientation: portrait) {
+@media only screen and (min-width: 768px) {
   .card {
-    width: 400px;
+    width: 47%;
   }
 }
 
 @media only screen and (min-width: 1090px) {
   .card {
-    width: 540px;
+    width: 47%;
     height: 300px;
   }
 }
 
 @media only screen and (min-width: 1824px) {
   .card {
-    width: 700px;
-    height: 500px;
+    width: 47%;
+    height: 365px;
   }
 }
 
@@ -510,6 +676,16 @@ footer div img {
           filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7492%) hue-rotate(256deg) brightness(102%) contrast(102%);
 }
 
+@media only screen and (min-width: 768px), only screen and (min-width: 1090px), only screen and (min-width: 1824px) {
+  footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
 /* ------------------------------ menu ------------------------------------ */
 .restaurant-1 {
   background-image: url("../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
@@ -546,9 +722,52 @@ footer div img {
   margin-top: -65px;
 }
 
-section h3 {
+.bloc-page {
+  width: 100%;
+  background-color: #f6f6f6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media only screen and (min-width: 1090px), only screen and (min-width: 1824px) {
+  .bloc-page {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+@media only screen and (min-width: 1090px), only screen and (min-width: 1824px) {
+  .bloc-page section {
+    padding: 3%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.bloc-page section h3 {
   -ms-flex-item-align: start;
       align-self: flex-start;
+  width: 100%;
 }
 
 .card-menu {

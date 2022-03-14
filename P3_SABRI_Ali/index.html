@@ -14,8 +14,19 @@
     
     <link rel="stylesheet" href="css/style.css" class="stylesheet">
     
+    
 </head>
 <body>
+    <div class="loader">
+        <div class="loader-circle">
+            <h1>Chargement</h1> 
+            <div class="loader-dots">
+                <span></span>
+                <span></span>
+                <span></span> 
+            </div> 
+        </div>
+    </div>
     <header>
         <div class="logo">
             <a href="#">  
@@ -70,7 +81,7 @@
                 </a>
             </nav>
         </div>
-        <section>
+        <section class="home-section">
             <h2>Restaurants</h2>
             
             <div class="card">
@@ -166,18 +177,24 @@
             <img src="images/logo/ohmyfood.png" alt="">
         </div>
         <div class="footer-link">
-            <i class="fa-solid fa-utensils"></i>
-            <a href="#">Proposer un restaurant</a>
+            <div class="footer-link">
+                <i class="fa-solid fa-utensils"></i>
+                <a href="#">Proposer un restaurant</a>
+            </div>
+            <div class="footer-link">
+                <i class="fa-solid fa-handshake-angle"></i>
+                <a href="#">Devenir partenaire</a>
+            </div>
+
         </div>
         <div class="footer-link">
-            <i class="fa-solid fa-handshake-angle"></i>
-            <a href="#">Devenir partenaire</a>
-        </div>
-        <div class="footer-link">
-            <a href="#">Mention légales</a>
-        </div>
-        <div class="footer-link">
-            <a href="mailto:toto@gmail.fr" >contact</a>
+            <div class="footer-link">
+                <a href="#">Mention légales</a>
+            </div>
+            <div class="footer-link">
+                <a href="mailto:toto@gmail.fr" >contact</a>
+            </div>
+            
         </div>
     </footer>
 </body>

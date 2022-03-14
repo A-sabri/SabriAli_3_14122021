@@ -2,6 +2,8 @@
 @import "lib/mixins.scss";
 @import "lib/responsive.scss";
 @import "lib/function.scss";
+@import "lib/loaders.scss";
+
 
 
 * {
@@ -42,8 +44,14 @@ $large-shadow: rgba(0, 0, 0, 0.35) 5px 10px 20px;
         -webkit-background-clip: text;
         color: transparent;
         opacity: 0;
-        &:active{
-            animation: heart .1ms forwards infinite;
+        &:hover{
+            animation: heart .5s forwards;
+
+            &:not(:active)::after{
+                content: '';
+                animation: heart .5s forwards;
+                animation-play-state: running;
+            }
         }  
     }
     @keyframes heart {
@@ -113,17 +121,16 @@ header{
     display: flex;
     flex-direction: column;
 
-    @media #{$tablet-up} {
+    @media #{$tablet-up}, #{$desktop-up}, #{$tv-up} {
         flex-direction: row;
         justify-content: space-between;
         padding: 10px 20px ;
     }
 
-    @media #{$desktop-up} {
-        flex-direction: row;
-        justify-content: space-between;
+    @media #{$desktop-up}, #{$tv-up} {
+        
         padding: 10px 0 ;
-        margin: 0 100px;
+        
     }
 
 
@@ -137,6 +144,11 @@ header{
     img {
         width: 165px;
         height: 30px;
+
+        @media #{$tablet-up}, #{$desktop-up}, #{$tv-up} {
+           width: 250px;
+           height: 38px;
+        }
     }
 }
 
@@ -150,29 +162,34 @@ header{
         padding: 10px;
     }
 
-    @media #{$tablet-up} {
+    @media #{$tablet-up}, #{$desktop-up}, #{$tv-up} {
         padding: 0 25px;
         border-radius: 10px;
     }
 
-    @media #{$desktop-up} {
-        padding: 0 25px;
-        border-radius: 10px;
-    }
+    
 }
 
-main{
-    @media #{$tablet-up} {
-        padding: 0 20px;
+header, main{
+    @media #{$tablet-up}, #{$desktop-up}, #{$tv-up} {
+        margin: 0 20px;
+    }
+
+    @media #{$desktop-up}, #{$tv-up} {
+        margin: 0 100px;
+    }
+
+    @media #{$tv-up} {
+        margin: 0 200px;
     }
 }
 
 .bloc-content{
-    @media #{$desktop-up} {
+    @media #{$desktop-up}, #{$tv-up} {
         display: flex;
         flex-direction: row-reverse;;
         justify-content: space-between;
-        margin: 0 100px;
+       
         padding: 3%;
         align-items: center;
     }
@@ -195,16 +212,22 @@ main{
             width: 220px;
             height: 50px;
 
+            @media #{$desktop-up}, #{$tv-up} {
+                width: 300px;
+                height: 70px;
+                font-size: 18px;
+            }
+
         }
     }
 
-    @media #{$tablet-up} {
+    @media #{$tablet-up}, #{$desktop-up}, #{$tv-up} {
         border-radius: 15px;
     }
 
-    @media #{$desktop-up}{
+    @media #{$desktop-up}, #{$tv-up}{
         background-color: white;
-        border-radius: 15px;
+        
     }
     
 }
@@ -214,9 +237,11 @@ main{
     align-items: center;
     display: flex;
     flex-direction: column;
+    padding: 3%;
 
     h2{
         width: 100%;
+        
     }
 
     a{
@@ -232,9 +257,10 @@ main{
             width: 320px;
             height: 70px;
             position: relative;
+            padding: 0 30px;
 
-            @media #{$tablet-up} {
-                padding: 0 35px;
+            i{
+                margin-right: 20px;
             }
     
             
@@ -247,9 +273,7 @@ main{
             }
             h2 {
                 align-self: center;
-                @media #{$tablet-up} {
-                    padding: 0 15px;
-                }
+                
             }
         }
 
@@ -267,14 +291,14 @@ main{
             
         }
     }
-    @media #{$tablet-up} {
+    @media #{$tablet-up}, #{$desktop-up}, #{$tv-up} {
         flex-direction: row;
         justify-content: space-around;
         flex-wrap: wrap;
         
     }
 
-    @media #{$desktop-up} {
+    @media #{$desktop-up}, #{$tv-up} {
         flex-direction: column;
         
     }
@@ -282,7 +306,7 @@ main{
 
 
 
-section {
+.home-section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -294,21 +318,12 @@ section {
         width: 100%;
     }
 
-    @media #{$tablet-up} {
+    @media #{$tablet-up}, #{$desktop-up}, #{$tv-up} {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
         border-radius: 15px;
     }
-
-    @media #{$desktop-up} {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        border-radius: 15px;
-        margin: 100px;
-    }
-
 
 
 }
@@ -318,7 +333,7 @@ section {
     border-radius: 15px;
     margin: 20px 10px;
     box-shadow: $shadow;
-    width: 335px;
+    width: 90%;
     height: 252px;
     display: flex;
     flex-direction: column;
@@ -326,18 +341,18 @@ section {
     transition: transform 330ms ease-in-out;
 
     @media #{$tablet-up} {
-        width: 400px;
+        width: 47%;
         
     }
 
     @media #{$desktop-up} {
-        width: 540px;
+        width: 47%;
         height: 300px;
     }
 
     @media #{$tv-up} {
-        width: 700px;
-        height: 500px;
+        width: 47%;
+        height: 365px;
     }
 
     .image-card {
@@ -392,6 +407,11 @@ footer {
             filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7492%) hue-rotate(256deg) brightness(102%) contrast(102%);     
           }
     }
+
+    @media #{$tablet-up}, #{$desktop-up}, #{$tv-up} {
+        display: flex;
+        justify-content: space-around;
+    }
 }
 
 /* ------------------------------ menu ------------------------------------ */ 
@@ -432,13 +452,38 @@ footer {
     }
 }
 
-section{
-    
-    h3{
-        align-self: flex-start;
+.bloc-page{
+    width: 100%;
+    background-color: #f6f6f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    @media #{$desktop-up}, #{$tv-up} {
+        flex-direction: row;
+        flex-wrap: wrap;
         
     }
+    
+    section{
+        
+        @media #{$desktop-up}, #{$tv-up} {
+            padding: 3%;
+            display: flex;
+            flex-direction: column;
+            
+        }
+
+        h3{
+            align-self: flex-start;
+            width: 100%;
+            
+        }
+    }
+    
 }
+
 
 .card-menu{
     width: 350px;
