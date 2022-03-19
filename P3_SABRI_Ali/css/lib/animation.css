@@ -1,0 +1,95 @@
+/*------------- slide des menu ---------------*/
+.card:nth-child(1) {
+  -webkit-animation: slide-page 1s ease-out;
+          animation: slide-page 1s ease-out;
+}
+
+.card:nth-child(2) {
+  -webkit-animation: slide-page 1s ease-out;
+          animation: slide-page 1s ease-out;
+}
+
+.card:nth-child(3) {
+  -webkit-animation: slide-page 1s .1s ease-out;
+          animation: slide-page 1s .1s ease-out;
+}
+
+.card:nth-child(4) {
+  -webkit-animation: slide-page 1s .2s ease-out;
+          animation: slide-page 1s .2s ease-out;
+}
+
+.card:nth-child(5) {
+  -webkit-animation: slide-page 1s .3s ease-out;
+          animation: slide-page 1s .3s ease-out;
+}
+
+.starter a:nth-child(1), .dish a:nth-child(1), .dessert a:nth-child(1) {
+  -webkit-animation: slide-page 1s ease-out;
+          animation: slide-page 1s ease-out;
+}
+
+.starter a:nth-child(2), .dish a:nth-child(2), .dessert a:nth-child(2) {
+  -webkit-animation: slide-page 1s .1s  ease-out;
+          animation: slide-page 1s .1s  ease-out;
+}
+
+.starter a:nth-child(3), .dish a:nth-child(3), .dessert a:nth-child(3) {
+  -webkit-animation: slide-page 1s .2s ease-out;
+          animation: slide-page 1s .2s ease-out;
+}
+
+.starter a:nth-child(4), .dish a:nth-child(4), .dessert a:nth-child(4) {
+  -webkit-animation: slide-page 1s .3s ease-out;
+          animation: slide-page 1s .3s ease-out;
+}
+
+.starter a:nth-child(5), .dish a:nth-child(5), .dessert a:nth-child(5) {
+  -webkit-animation: slide-page 1s .4s ease-out;
+          animation: slide-page 1s .4s ease-out;
+}
+
+@-webkit-keyframes slide-page {
+  0% {
+    -webkit-transform: translateY(300%);
+            transform: translateY(300%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 0.7;
+  }
+}
+
+@keyframes slide-page {
+  0% {
+    -webkit-transform: translateY(300%);
+            transform: translateY(300%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 0.7;
+  }
+}
+
+/*------------- LIKE ---------------*/
+@-webkit-keyframes heart {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes heart {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=animation.css.map */

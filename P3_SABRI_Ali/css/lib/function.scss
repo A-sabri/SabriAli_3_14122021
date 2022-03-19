@@ -1,0 +1,67 @@
+/* ---------------------- bouton --------------------- */
+
+%btn {
+    margin: 20px;
+    border-radius: 25px;
+    color: white;
+    background: $gradient;
+    box-shadow: $shadow;
+    border: none;
+    cursor: pointer;
+    
+    &:hover{
+        background: $gradient2;
+        box-shadow: $large-shadow;
+    }
+} 
+
+/* ---------------------- like --------------------- */
+
+%like {
+    display: flex;
+    position: relative;
+    
+    i{
+        font-size: 25px;
+        align-self: center;  
+    }
+    
+    .fa-solid{
+        position: absolute;
+        background: $gradient;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        opacity: 0;
+        &:hover{
+            animation: heart .5s forwards;  
+        }  
+    }
+}
+
+/* ---------------------- validation --------------------- */
+
+%check{
+    position: relative;
+    border-radius: 0 15px 15px 0;
+    overflow: hidden;
+    
+    
+    .slide {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center ;
+        right: -100%;
+        width: 100%;
+        height: 100%;
+        background: $tertiary;
+        transition: 1s;
+        
+        i{
+            color: $withe;
+            font-size: 2em;
+            transition: transform 1.5s ; 
+        }
+    }
+}

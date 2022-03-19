@@ -68,8 +68,8 @@
   height: 350px;
   border: 10px solid transparent;
   border-radius: 100%;
-  -webkit-animation: spin 5s linear infinite;
-          animation: spin 5s linear infinite;
+  -webkit-animation: spin 3s linear infinite;
+          animation: spin 3s linear infinite;
 }
 
 @-webkit-keyframes spin {

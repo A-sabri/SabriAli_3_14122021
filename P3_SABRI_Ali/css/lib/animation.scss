@@ -1,1 +1,51 @@
-/*------------- Loader ---------------*/
+/*------------- slide des menu ---------------*/
+
+.card:nth-child(1){
+    animation: slide-page 1s ease-out;
+}
+.card:nth-child(2){
+    animation: slide-page 1s ease-out;
+}
+.card:nth-child(3){
+    animation: slide-page 1s .1s ease-out;
+}
+.card:nth-child(4){
+    animation: slide-page 1s .2s ease-out;
+}
+.card:nth-child(5){
+    animation: slide-page 1s .3s ease-out;
+}
+
+
+.starter a:nth-child(1), .dish a:nth-child(1), .dessert a:nth-child(1){
+    animation: slide-page 1s ease-out;
+}
+.starter a:nth-child(2), .dish a:nth-child(2), .dessert a:nth-child(2){
+    animation: slide-page 1s .1s  ease-out;
+}
+.starter a:nth-child(3), .dish a:nth-child(3), .dessert a:nth-child(3){
+    animation: slide-page 1s .2s ease-out;
+}
+.starter a:nth-child(4), .dish a:nth-child(4), .dessert a:nth-child(4){
+    animation: slide-page 1s .3s ease-out;
+}
+.starter a:nth-child(5), .dish a:nth-child(5), .dessert a:nth-child(5){
+    animation: slide-page 1s .4s ease-out;
+}
+
+@keyframes slide-page {
+    0%   {transform: translateY(300%); opacity:(0);}
+    100% {transform: translateY(0); opacity:(0.7);}
+}
+
+/*------------- LIKE ---------------*/
+
+
+@keyframes heart {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

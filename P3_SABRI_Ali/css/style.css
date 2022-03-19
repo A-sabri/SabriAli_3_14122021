@@ -1,3 +1,118 @@
+.logo {
+  font-family: 'Shrikhand', 'cursive';
+}
+
+h1, h2, h3, p {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+p {
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* ---------------------- bouton --------------------- */
+.diner-search nav .search-btn, .order .order-btn {
+  margin: 20px;
+  border-radius: 25px;
+  color: white;
+  background: linear-gradient(163deg, #ff79da 24%, #9356dc 77%);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.diner-search nav .search-btn:hover, .order .order-btn:hover {
+  background: linear-gradient(163deg, #ff79da 54%, #9356dc);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 5px 10px 20px;
+          box-shadow: rgba(0, 0, 0, 0.35) 5px 10px 20px;
+}
+
+/* ---------------------- like --------------------- */
+.card .like, .Restaurant .name-restaurant .like {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.card .like i, .Restaurant .name-restaurant .like i {
+  font-size: 25px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.card .like .fa-solid, .Restaurant .name-restaurant .like .fa-solid {
+  position: absolute;
+  background: linear-gradient(163deg, #ff79da 24%, #9356dc 77%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  opacity: 0;
+}
+
+.card .like .fa-solid:hover, .Restaurant .name-restaurant .like .fa-solid:hover {
+  -webkit-animation: heart .5s forwards;
+          animation: heart .5s forwards;
+}
+
+/* ---------------------- validation --------------------- */
+.card-menu .check {
+  position: relative;
+  border-radius: 0 15px 15px 0;
+  overflow: hidden;
+}
+
+.card-menu .check .slide {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background: #99E2D0;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.card-menu .check .slide i {
+  color: #fff;
+  font-size: 2em;
+  -webkit-transition: -webkit-transform 1.5s;
+  transition: -webkit-transform 1.5s;
+  transition: transform 1.5s;
+  transition: transform 1.5s, -webkit-transform 1.5s;
+}
+
 .loader {
   position: fixed;
   height: 100vh;
@@ -68,8 +183,8 @@
   height: 350px;
   border: 10px solid transparent;
   border-radius: 100%;
-  -webkit-animation: spin 5s linear infinite;
-          animation: spin 5s linear infinite;
+  -webkit-animation: spin 3s linear infinite;
+          animation: spin 3s linear infinite;
 }
 
 @-webkit-keyframes spin {
@@ -167,47 +282,84 @@
           animation-delay: 0.8s;
 }
 
-* {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+/*------------- slide des menu ---------------*/
+.card:nth-child(1) {
+  -webkit-animation: slide-page 1s ease-out;
+          animation: slide-page 1s ease-out;
 }
 
-.card .like, .Restaurant .name-restaurant .like {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
+.card:nth-child(2) {
+  -webkit-animation: slide-page 1s ease-out;
+          animation: slide-page 1s ease-out;
 }
 
-.card .like i, .Restaurant .name-restaurant .like i {
-  font-size: 25px;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+.card:nth-child(3) {
+  -webkit-animation: slide-page 1s .1s ease-out;
+          animation: slide-page 1s .1s ease-out;
 }
 
-.card .like .fa-solid, .Restaurant .name-restaurant .like .fa-solid {
-  position: absolute;
-  background: linear-gradient(163deg, #ff79da 24%, #9356dc 77%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  opacity: 0;
+.card:nth-child(4) {
+  -webkit-animation: slide-page 1s .2s ease-out;
+          animation: slide-page 1s .2s ease-out;
 }
 
-.card .like .fa-solid:hover, .Restaurant .name-restaurant .like .fa-solid:hover {
-  -webkit-animation: heart .5s forwards;
-          animation: heart .5s forwards;
+.card:nth-child(5) {
+  -webkit-animation: slide-page 1s .3s ease-out;
+          animation: slide-page 1s .3s ease-out;
 }
 
-.card .like .fa-solid:hover:not(:active)::after, .Restaurant .name-restaurant .like .fa-solid:hover:not(:active)::after {
-  content: '';
-  -webkit-animation: heart .5s forwards;
-          animation: heart .5s forwards;
-  -webkit-animation-play-state: running;
-          animation-play-state: running;
+.starter a:nth-child(1), .dish a:nth-child(1), .dessert a:nth-child(1) {
+  -webkit-animation: slide-page 1s ease-out;
+          animation: slide-page 1s ease-out;
 }
 
+.starter a:nth-child(2), .dish a:nth-child(2), .dessert a:nth-child(2) {
+  -webkit-animation: slide-page 1s .1s  ease-out;
+          animation: slide-page 1s .1s  ease-out;
+}
+
+.starter a:nth-child(3), .dish a:nth-child(3), .dessert a:nth-child(3) {
+  -webkit-animation: slide-page 1s .2s ease-out;
+          animation: slide-page 1s .2s ease-out;
+}
+
+.starter a:nth-child(4), .dish a:nth-child(4), .dessert a:nth-child(4) {
+  -webkit-animation: slide-page 1s .3s ease-out;
+          animation: slide-page 1s .3s ease-out;
+}
+
+.starter a:nth-child(5), .dish a:nth-child(5), .dessert a:nth-child(5) {
+  -webkit-animation: slide-page 1s .4s ease-out;
+          animation: slide-page 1s .4s ease-out;
+}
+
+@-webkit-keyframes slide-page {
+  0% {
+    -webkit-transform: translateY(300%);
+            transform: translateY(300%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 0.7;
+  }
+}
+
+@keyframes slide-page {
+  0% {
+    -webkit-transform: translateY(300%);
+            transform: translateY(300%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 0.7;
+  }
+}
+
+/*------------- LIKE ---------------*/
 @-webkit-keyframes heart {
   0% {
     opacity: 0;
@@ -216,7 +368,6 @@
     opacity: 1;
   }
 }
-
 @keyframes heart {
   0% {
     opacity: 0;
@@ -226,62 +377,116 @@
   }
 }
 
-.diner-search nav .search-btn, .order .order-btn {
-  margin: 20px;
-  border-radius: 25px;
-  color: white;
-  background: linear-gradient(163deg, #ff79da 24%, #9356dc 77%);
-  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  border: none;
-  cursor: pointer;
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.diner-search nav .search-btn:hover, .order .order-btn:hover {
-  background: linear-gradient(163deg, #ff79da 54%, #9356dc);
-  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 5px 10px 20px;
-          box-shadow: rgba(0, 0, 0, 0.35) 5px 10px 20px;
+/*  
+$primary: #9356DC;
+$secondary:#FF79DA;
+$tertiary: #99E2D0;
+
+$gradient:  linear-gradient(163deg, rgba(255,121,218,1) 24%, rgba(147,86,220,1) 77%);
+$gradient2: linear-gradient(163deg, rgba(255,121,218,1) 54%, rgba(147,86,220,1) );
+
+
+
+$grey: #eaeaea;
+$lightGrey: #f6f6f6;
+$darkGrey: #353535;
+$withe: #fff;
+
+$shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+$large-shadow: rgba(0, 0, 0, 0.35) 5px 10px 20px;
+
+%like {
+    display: flex;
+    position: relative;
+    
+    i{
+        font-size: 25px;
+        align-self: center;  
+    }
+    
+    .fa-solid{
+        position: absolute;
+        background: $gradient;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        opacity: 0;
+        &:hover{
+            animation: heart .5s forwards;
+            
+            
+        }  
+    }
+    
+    @keyframes heart {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    } 
+    
 }
 
-.logo {
-  font-family: 'Shrikhand', 'cursive';
+%btn {
+    margin: 20px;
+    border-radius: 25px;
+    color: white;
+    background: $gradient;
+    box-shadow: $shadow;
+    border: none;
+    cursor: pointer;
+    &:hover{
+        background: $gradient2;
+        box-shadow: $large-shadow;
+    }
+} 
+
+.logo{
+    font-family: 'Shrikhand', 'cursive';
 }
 
-h1, h2, h3, p {
-  font-family: 'Roboto', sans-serif;
+h1, h2, h3, p  {
+    font-family: 'Roboto', sans-serif;
+}
+h1{
+    font-size: 30px;
 }
 
-h1 {
-  font-size: 30px;
+h2{
+    font-size: 18px;
 }
 
-h2 {
-  font-size: 18px;
+h3{
+    font-size: 16px;
+}
+ 
+p{
+    font-size: 14px;
 }
 
-h3 {
-  font-size: 16px;
+a{
+    text-decoration: none;
+    color: black;
 }
 
-p {
-  font-size: 14px;
+li{
+    list-style-type: none;
 }
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-li {
-  list-style-type: none;
-}
-
+*/
 body {
   margin: auto;
   padding: 0;
   width: 100%;
 }
 
+/* ---------------------------  header --------------------------- */
 header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -356,6 +561,7 @@ header {
   }
 }
 
+/* --------------------------- main --------------------------- */
 @media only screen and (min-width: 768px), only screen and (min-width: 1090px), only screen and (min-width: 1824px) {
   header, main {
     margin: 0 20px;
@@ -393,6 +599,7 @@ header {
   }
 }
 
+/* ------------ Explorer nos restaurant ------------ */
 .diner-search {
   width: 100%;
   padding: 10%;
@@ -437,6 +644,7 @@ header {
   }
 }
 
+/* ------------ Fonctionement ------------ */
 .menu {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -536,6 +744,7 @@ header {
   }
 }
 
+/* ------------ Restaurant ------------ */
 .home-section {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -657,6 +866,7 @@ header {
           transform: scale(1.05);
 }
 
+/* --------------------------- Footer --------------------------- */
 footer {
   padding: 3%;
   background-color: #353535;
@@ -686,27 +896,44 @@ footer div img {
   }
 }
 
-/* ------------------------------ menu ------------------------------------ */
-.restaurant-1 {
-  background-image: url("../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+/* -----------/-----------/-----------/-----------/-----------/----------- menu -----------/-----------/-----------/-----------/-----------/----------- */
+/* --------------------------- Header --------------------------- */
+.previus i {
+  font-size: 25px;
 }
 
-.restaurant-2 {
-  background-image: url("../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+.logo-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
 }
 
-.restaurant-3 {
-  background-image: url("../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
-}
-
-.restaurant-4 {
-  background-image: url("../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
-}
-
+/* --------------------------- Main --------------------------- */
+/* ---------- banier restaurant ---------- */
 .Restaurant .image-restaurant {
   width: 100%;
   height: 260px;
   background-size: cover;
+}
+
+.Restaurant .restaurant-1 {
+  background-image: url("../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+}
+
+.Restaurant .restaurant-2 {
+  background-image: url("../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+}
+
+.Restaurant .restaurant-3 {
+  background-image: url("../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+}
+
+.Restaurant .restaurant-4 {
+  background-image: url("../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
 }
 
 .Restaurant .name-restaurant {
@@ -722,6 +949,7 @@ footer div img {
   margin-top: -65px;
 }
 
+/* ------------ section menu ------------ */
 .bloc-page {
   width: 100%;
   background-color: #f6f6f6;
@@ -807,37 +1035,28 @@ footer div img {
 }
 
 .card-menu .check {
-  position: relative;
-  border-radius: 0 15px 15px 0;
-  overflow: hidden;
-}
-
-.card-menu .check .slide {
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  right: -100%;
-  width: 100%;
-  height: 100%;
-  background: #99E2D0;
-  -webkit-transition: 1s;
-  transition: 1s;
-}
-
-.card-menu .check .slide i {
-  color: #fff;
-  font-size: 2em;
-  -webkit-transition: -webkit-transform 1.5s;
-  transition: -webkit-transform 1.5s;
-  transition: transform 1.5s;
-  transition: transform 1.5s, -webkit-transform 1.5s;
+  /*position: relative;
+        border-radius: 0 15px 15px 0;
+        overflow: hidden;
+        
+        
+        .slide {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center ;
+            right: -100%;
+            width: 100%;
+            height: 100%;
+            background: $tertiary;
+            transition: 1s;
+            
+            i{
+                color: $withe;
+                font-size: 2em;
+                transition: transform 1.5s ; 
+            }
+        }*/
 }
 
 .card-menu:hover .check {
@@ -855,6 +1074,7 @@ footer div img {
           transform: rotate(2turn);
 }
 
+/* ------------ bouton commande ------------ */
 .order {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -872,79 +1092,43 @@ footer div img {
   font-size: 18px;
 }
 
-.card:nth-child(1) {
-  -webkit-animation: slide-page 1s ease-out;
-          animation: slide-page 1s ease-out;
+/*
+.card:nth-child(1){
+    animation: slide-page 1s ease-out;
+}
+.card:nth-child(2){
+    animation: slide-page 1s ease-out;
+}
+.card:nth-child(3){
+    animation: slide-page 1s .1s ease-out;
+}
+.card:nth-child(4){
+    animation: slide-page 1s .2s ease-out;
+}
+.card:nth-child(5){
+    animation: slide-page 1s .3s ease-out;
 }
 
-.card:nth-child(2) {
-  -webkit-animation: slide-page 1s ease-out;
-          animation: slide-page 1s ease-out;
-}
 
-.card:nth-child(3) {
-  -webkit-animation: slide-page 1s .1s ease-out;
-          animation: slide-page 1s .1s ease-out;
+.starter a:nth-child(1), .dish a:nth-child(1), .dessert a:nth-child(1){
+    animation: slide-page 1s ease-out;
 }
-
-.card:nth-child(4) {
-  -webkit-animation: slide-page 1s .2s ease-out;
-          animation: slide-page 1s .2s ease-out;
+.starter a:nth-child(2), .dish a:nth-child(2), .dessert a:nth-child(2){
+    animation: slide-page 1s .1s  ease-out;
 }
-
-.card:nth-child(5) {
-  -webkit-animation: slide-page 1s .3s ease-out;
-          animation: slide-page 1s .3s ease-out;
+.starter a:nth-child(3), .dish a:nth-child(3), .dessert a:nth-child(3){
+    animation: slide-page 1s .2s ease-out;
 }
-
-.starter a:nth-child(1), .dish a:nth-child(1), .dessert a:nth-child(1) {
-  -webkit-animation: slide-page 1s ease-out;
-          animation: slide-page 1s ease-out;
+.starter a:nth-child(4), .dish a:nth-child(4), .dessert a:nth-child(4){
+    animation: slide-page 1s .3s ease-out;
 }
-
-.starter a:nth-child(2), .dish a:nth-child(2), .dessert a:nth-child(2) {
-  -webkit-animation: slide-page 1s .1s  ease-out;
-          animation: slide-page 1s .1s  ease-out;
-}
-
-.starter a:nth-child(3), .dish a:nth-child(3), .dessert a:nth-child(3) {
-  -webkit-animation: slide-page 1s .2s ease-out;
-          animation: slide-page 1s .2s ease-out;
-}
-
-.starter a:nth-child(4), .dish a:nth-child(4), .dessert a:nth-child(4) {
-  -webkit-animation: slide-page 1s .3s ease-out;
-          animation: slide-page 1s .3s ease-out;
-}
-
-.starter a:nth-child(5), .dish a:nth-child(5), .dessert a:nth-child(5) {
-  -webkit-animation: slide-page 1s .4s ease-out;
-          animation: slide-page 1s .4s ease-out;
-}
-
-@-webkit-keyframes slide-page {
-  0% {
-    -webkit-transform: translateY(300%);
-            transform: translateY(300%);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 0.7;
-  }
+.starter a:nth-child(5), .dish a:nth-child(5), .dessert a:nth-child(5){
+    animation: slide-page 1s .4s ease-out;
 }
 
 @keyframes slide-page {
-  0% {
-    -webkit-transform: translateY(300%);
-            transform: translateY(300%);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 0.7;
-  }
+    0%   {transform: translateY(300%); opacity:(0);}
+    100% {transform: translateY(0); opacity:(0.7);}
 }
+*/
 /*# sourceMappingURL=style.css.map */
