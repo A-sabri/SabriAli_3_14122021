@@ -34,9 +34,15 @@
         color: transparent;
         opacity: 0;
 
-        &:hover{
+        &:active{
             animation: heart .5s forwards;  
         }
+
+        &:hover{
+            @media #{$desktop-up}, #{$tv-up} {
+                animation: heart .5s forwards;  
+            } 
+        } 
     }
 }
 

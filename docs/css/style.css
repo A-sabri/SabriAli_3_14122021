@@ -74,9 +74,16 @@ li {
   opacity: 0;
 }
 
-.card .like .fa-solid:hover, .Restaurant .name-restaurant .like .fa-solid:hover {
+.card .like .fa-solid:active, .Restaurant .name-restaurant .like .fa-solid:active {
   -webkit-animation: heart .5s forwards;
           animation: heart .5s forwards;
+}
+
+@media only screen and (min-width: 1090px), only screen and (min-width: 1824px) {
+  .card .like .fa-solid:hover, .Restaurant .name-restaurant .like .fa-solid:hover {
+    -webkit-animation: heart .5s forwards;
+            animation: heart .5s forwards;
+  }
 }
 
 /* ---------------------- validation --------------------- */
@@ -425,8 +432,8 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-shadow: 0px 5px 0px rgba(0, 0, 0, 0.05);
-          box-shadow: 0px 5px 0px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.05);
   position: relative;
 }
 
@@ -464,6 +471,17 @@ header {
       -ms-grid-row-align: center;
       align-self: center;
   padding: 10px;
+}
+
+.location .city-location {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.location .city-location input {
+  border: none;
+  background: transparent;
 }
 
 @media only screen and (min-width: 768px), only screen and (min-width: 1090px), only screen and (min-width: 1824px) {

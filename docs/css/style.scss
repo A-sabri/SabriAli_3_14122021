@@ -1,9 +1,9 @@
 
 @import "lib/color-font.scss";
+@import "lib/responsive.scss";
 @import "lib/function.scss";
 @import "lib/loaders.scss";
 @import "lib/animation.scss";
-@import "lib/responsive.scss";
 
 /* --------------------------- Général --------------------------- */
 
@@ -38,7 +38,7 @@ header{
 .logo {
     display: flex;
     justify-content: center;
-    box-shadow: 0px 3px 0px rgb(0 0 0 / 5%);
+    box-shadow: 0px 3px 0px rgba(0, 0, 0 , 0.05);
     position: relative;
 
     @media #{$tablet-up}, #{$desktop-up}, #{$tv-up} {
@@ -64,6 +64,15 @@ header{
     .icon-location {
         align-self: center;
         padding: 10px;
+    }
+
+    .city-location {
+        align-self: center;
+
+        input {
+            border: none;
+            background: transparent;
+        }
     }
 
     @media #{$tablet-up}, #{$desktop-up}, #{$tv-up} {
